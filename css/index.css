@@ -1,0 +1,75 @@
+html,
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+.header {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: white;
+	background-color: rgb(20, 20, 20);
+
+	font-family: 'Roboto Mono', monospace;
+
+	padding: 20px;
+}
+
+.header .info {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header .info h1 {
+	position: relative;
+}
+
+.header .info h1:after {
+	content: "";
+	width: 11rem;
+	height: 1.1px;
+	background-color: white;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.header .name {
+	width: 100%;
+	height: 15rem;
+}
+
+svg {
+	font: bold 150px Century Gothic, Arial;
+	height: 100%;
+	width: 100%;
+}
+
+svg text {
+	fill: none;
+	stroke: rgb(13, 236, 106);
+	stroke-width: 2px;
+	stroke-linejoin: round;
+}
+
+a,
+a:visited {
+	color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+	.header {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+
+	.header .info {
+		width: 100%;
+	}
+}
