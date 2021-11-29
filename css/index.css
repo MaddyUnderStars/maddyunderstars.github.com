@@ -7,6 +7,8 @@ body {
 .header {
 	height: 100vh;
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
@@ -14,12 +16,9 @@ body {
 	background-color: rgb(20, 20, 20);
 
 	font-family: 'Roboto Mono', monospace;
-
-	padding: 20px;
 }
 
 .header .info {
-	width: 50%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -45,7 +44,9 @@ body {
 }
 
 svg {
-	font: bold 150px Century Gothic, Arial;
+	font-weight: bold;
+	font-family: 'Century Gothic', Arial;
+	font-size: 150px;
 	height: 100%;
 	width: 100%;
 }
@@ -62,7 +63,7 @@ a:visited {
 	color: white;
 }
 
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
 	.header {
 		flex-wrap: wrap;
 		flex-direction: column;
@@ -72,4 +73,4 @@ a:visited {
 	.header .info {
 		width: 100%;
 	}
-}
+} */

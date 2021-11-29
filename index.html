@@ -12,23 +12,24 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="./css/index.css">
+
+	<link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 </head>
 
 <body>
 	<div class="header">
 		<div class="name">
 			<svg preserveAspectRatio="none">
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
-				<text dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
+				<text y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
+				<text y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
+				<text y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
+				<text y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
+				<text y="50%" x="50%" dominant-baseline="middle" text-anchor="middle">I'm Maddy</text>
 			</svg>
 		</div>
 		<div class="info">
-			<div>
+			<div style="margin: 40px">
+				<!-- don't want to -->
 				<h1>Half-full stack developer.</h1>
 				<p>Mostly professional dumbass</p>
 				<p>Javascript/Ts, C++.</p>
@@ -40,40 +41,7 @@
 		</div>
 	</div>
 
-	<script>
-		const svg = document.querySelector(".header .name svg");
-
-		for (let i = 0; i < svg.children.length; i++) {
-			var curr = svg.children[i];
-			curr.setAttribute("opacity", i === svg.children.length - 1 ? 1 : ((i + 1) / (svg.children.length - 1)) / 20)
-		}
-		var posx = window.innerWidth / 2, posy = window.innerHeight / 2;
-
-		update = () => {
-			var bbox = svg.getBoundingClientRect();
-			
-			if (bbox.width < 1000)
-				svg.style.fontSize = `${bbox.width / 1000 * 150}px`;
-			else
-				svg.style.fontSize = "150px";
-
-			for (var i = 0; i < svg.children.length; i++) {
-				const curr = svg.children[i];
-				curr.setAttribute("y", (i * 10) + (((posy - window.innerHeight / 2) / (i + 1)) / 10) + bbox.height / 3);	// / 3 probably because of the previous height adjusts
-				curr.setAttribute("x", ((posx - window.innerWidth / 2) / (i + 1)) / 5 +
-					(Math.sin(Date.now() / 500 + (i * 150)) * 7) + bbox.width / 2);
-			}
-
-			requestAnimationFrame(update);
-		}
-
-		update();
-
-		window.addEventListener("mousemove", (e) => {
-			posx = e.clientX;
-			posy = e.clientY;
-		})
-	</script>
+	<script src="js/hero.js"></script>
 </body>
 
 </html>
