@@ -22,20 +22,16 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	text-align: center;
 }
 
 .header .info h1 {
 	position: relative;
 }
 
-.header .info h1:after {
-	content: "";
-	width: 11rem;
-	height: 1.1px;
-	background-color: white;
-	position: absolute;
-	left: 0;
-	bottom: 0;
+#funny {
+	border-bottom: 2px solid white;
 }
 
 .header .name {
@@ -58,19 +54,11 @@ svg text {
 	stroke-linejoin: round;
 }
 
+svg text:not(:last-child) {
+	user-select: none;
+}
+
 a,
 a:visited {
 	color: white;
 }
-
-/* @media only screen and (max-width: 1200px) {
-	.header {
-		flex-wrap: wrap;
-		flex-direction: column;
-	}
-
-
-	.header .info {
-		width: 100%;
-	}
-} */

@@ -21,7 +21,7 @@ update = () => {
 		const curr = svg.children[i];
 		curr.setAttribute("y", (i * 10) + (((posy - window.innerHeight / 2) / (i + 1)) / 10) + bbox.height / 3);	// / 3 probably because of the previous height adjusts
 		curr.setAttribute("x", ((posx - window.innerWidth / 2) / (i + 1)) / 5 +
-			(Math.sin(Date.now() / 500 + (i * 150)) * 7) + bbox.width / 2);
+			(Math.sin(Date.now() / 500 + (i * 2)) * 7) + bbox.width / 2);
 	}
 
 	requestAnimationFrame(update);
