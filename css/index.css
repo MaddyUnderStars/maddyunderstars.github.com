@@ -13,7 +13,7 @@ body {
 	align-items: center;
 
 	color: white;
-	background-color: rgb(20, 20, 20);
+	background: rgb(20, 20, 20);
 
 	font-family: 'Roboto Mono', monospace;
 }
@@ -40,8 +40,8 @@ body {
 }
 
 svg {
+	font-family: 'Gothic A1', monospace;
 	font-weight: bold;
-	font-family: 'Century Gothic', Arial;
 	font-size: 150px;
 	height: 100%;
 	width: 100%;
