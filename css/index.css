@@ -1,68 +1,117 @@
 html,
 body {
-	margin: 0;
-	min-height: 100vh;
-}
-
-.header {
+	width: 100vw;
 	height: 100vh;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
 	color: white;
-	background: rgb(5, 5, 5);
+	--scanline-width: 1px;
 
-	font-family: 'Roboto Mono', monospace;
+	font-size: 1.5em;
+
+	font-family: Consolas, 'Courier New', monospace;
+
+	overflow: hidden;
 }
 
-.header .info {
+@media only screen and (max-width: 700px) {
+	#understars {
+		display: none;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.background {
+	background-color: #030207;
+	width: 100%;
+	height: 100%;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	text-align: center;
+	text-shadow: 0 0 5px #fff, 0 0 10px #4608ff, 0 0 15px #4608ff, 0 0 30px #4608ff;
 }
 
-.header .info h1 {
-	position: relative;
-}
-
-#funny {
-	border-bottom: 2px solid white;
-}
-
-.header .name {
+.scanlines {
 	width: 100%;
-	height: 15rem;
-}
-
-svg {
-	font-family: 'Gothic A1', monospace;
-	font-weight: bold;
-	font-size: 150px;
 	height: 100%;
-	width: 100%;
-}
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
 
-svg text {
-	fill: none;
-	stroke: rgb(13, 236, 106);
-	stroke-width: 2px;
-	stroke-linejoin: round;
-}
+	background: -webkit-repeating-linear-gradient(top,
+			transparent 0px,
+			transparent 2px,
+			rgba(0, 0, 0, 0.25) 2px,
+			rgba(0, 0, 0, 0.25) 4px);
+	-webkit-background-size: 100% 4px;
+	background: -moz-repeating-linear-gradient(top,
+			transparent 0px,
+			transparent 2px,
+			rgba(0, 0, 0, 0.25) 2px,
+			rgba(0, 0, 0, 0.25) 4px);
+	-moz-background-size: 100% 4px;
 
-svg text:last-child {
-	filter: drop-shadow(0px 0px 10px #116466);
-}
-
-svg text:not(:last-child) {
+	animation: scanoffset 180s linear infinite alternate;
 	user-select: none;
+	pointer-events: none;
+}
+
+@keyframes scanoffset {
+	0% {
+		background-position-y: 0;
+	}
+
+	100% {
+		background-position-y: 100vh;
+	}
+}
+
+#name::after {
+	content: "✰";
+	position: relative;
+	display: inline-block;
+	top: -0.9rem;
+	right: 0;
+	transform: rotate(12deg);
+}
+
+#name::before {
+	content: "";
+	position: absolute;
+	top: 0.2rem;
+	right: 1.7rem;
+	display: block;
+	border-right: 10px solid white;
+	border-top-right-radius: 100%;
+	width: 35%;
+	height: 20%;
+}
+
+#name {
+	position: relative;
 }
 
 a,
 a:visited {
 	color: white;
+}
+
+#content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#links {
+	font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
 }
