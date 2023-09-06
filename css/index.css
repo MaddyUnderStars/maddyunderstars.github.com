@@ -3,7 +3,6 @@ body {
 	width: 100vw;
 	height: 100vh;
 	color: white;
-	--scanline-width: 1px;
 
 	font-size: 1.5em;
 
@@ -24,7 +23,8 @@ body {
 }
 
 .background {
-	background-color: #030207;
+	background: #0c081b;
+	background: radial-gradient(circle, #0c081b 0%, #0c081b 50%, #211341 100%);
 	width: 100%;
 	height: 100%;
 
@@ -78,6 +78,21 @@ body {
 	top: -0.9rem;
 	right: 0;
 	transform: rotate(12deg);
+	animation: wiggle 2s ease infinite;
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(12deg);
+	}
+
+	50% {
+		transform: rotate(20deg);
+	}
+
+	100% {
+		transform: rotate(12deg);
+	}
 }
 
 #name::before {
@@ -114,4 +129,10 @@ a:visited {
 	flex-wrap: wrap;
 	gap: 10px;
 	align-items: center;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	* {
+		animation: none;
+	}
 }
