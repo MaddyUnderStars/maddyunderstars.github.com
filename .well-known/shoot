@@ -1,0 +1,4 @@
+{
+	"api": "https://chat.understars.dev/",
+  "gateway": "wss://chat.understars.dev"
+}
